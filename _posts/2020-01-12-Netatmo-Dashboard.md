@@ -13,7 +13,7 @@ toc: true
 This is a tutorial for setting up a Raspberry Pi to fetch and store Netatmo weather station data in a InfluxDB database. Information is also included for displaying the database information with Grafana on a kiosk style screen.
 
 <figure>
-    <a href="https://github.com/ScottEgan/ScottEgan.github.io/edit/master/_posts/2020-01-12-Netatmo-Dashboard.md"><img src="/assets/images/NetatmoDash.PNG"></a>
+    <a href="https://github.com/ScottEgan"><img src="/assets/images/NetatmoDash.PNG"></a>
 </figure>
 
 
