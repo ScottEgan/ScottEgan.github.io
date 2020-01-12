@@ -116,7 +116,7 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       # url: mailto:your.name@email.com
-    - label: "Linked In"
+    - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/scott--egan/"
     - label: "Twitter"
@@ -141,12 +141,15 @@ footer:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/scott--egan/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       # url:
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
-      # url:
+      url: "https://github.com/ScottEgan"
     - label: "Bitbucket"
       icon: "fab fa-fw fa-bitbucket"
       # url:
