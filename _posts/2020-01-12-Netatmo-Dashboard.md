@@ -10,7 +10,7 @@ toc: true
 
 # Netatmo Database and Graph Visualization
 
-This is a tutorial for setting up a Raspberry Pi to fetch and store Netatmo weather station data in a InfluxDB database. I also am displaying the database information with Grafana on a kiosk style screen.
+This is a tutorial for setting up a Raspberry Pi to fetch and store Netatmo weather station data in a InfluxDB database. Information is also included for displaying the database information with Grafana on a kiosk style screen.
 
 <figure>
     <a href="/assets/images/NetatmoDash.PNG"><img src="/assets/images/NetatmoDash.PNG"></a>
@@ -45,7 +45,7 @@ You will need a ID and Key from Netatmo in order to use their API.
 
 1. Go to [https://dev.netatmo.com/apps/createanapp](https://dev.netatmo.com/apps/createanapp) and follow the steps to sign up
 2. Find your client ID and your client secret
-3. Look through the documentation. [https://dev.netatmo.com/apidocumentation/weather](https://dev.netatmo.com/apidocumentation/weather)
+3. Look through the API [documentation](https://dev.netatmo.com/apidocumentation/weather).
 
 ## 3. Install InfluxDB
 
@@ -57,16 +57,16 @@ You will need a ID and Key from Netatmo in order to use their API.
 
 ## 4. Write a script to handle the data
 
-1. See [fetchAndWriteData.py](https://github.com/ScottEgan/NetatmoDataGather). This file was was adapted from [github user arnesund](https://gist.github.com/arnesund/29ffa1cdabacabe323d3bc45bc7db3fb)
+1. See [fetchAndWriteData.py](https://github.com/ScottEgan/NetatmoDataGather). This file was was adapted from github user [arnesund](https://gist.github.com/arnesund/29ffa1cdabacabe323d3bc45bc7db3fb)
 2. I think netatmo stores data every 10min so set code to run every 8
-   - Use cron: [https://www.raspberrypi.org/documentation/linux/usage/cron.md](https://www.raspberrypi.org/documentation/linux/usage/cron.md)
+   - Use [cron](https://www.raspberrypi.org/documentation/linux/usage/cron.md)
    - Example:  
    ```*/8 \* \* \* \* /home/pi/fetchAndWriteData.py >> /home/pi/netatmoLogs.txt```  
      The >> means that the script output will be appended to the .txt file that follows
   
 ## 5. Install Grafana
 
-1. Follow [https://pimylifeup.com/raspberry-pi-grafana/](https://pimylifeup.com/raspberry-pi-grafana/)
+1. Follow [this](https://pimylifeup.com/raspberry-pi-grafana/) tutorial by pimylifeup  
 2. Connect InfluxDB using default settings and your username and password from when you installed influx
 
 ## 6. Configure Grafana Dashboard
@@ -80,13 +80,13 @@ You will need a ID and Key from Netatmo in order to use their API.
 
 ## 7. Set Grafana to start in kiosk mode at startup
 
-1. Use instructions from here [https://github.com/grafana/grafana-kiosk](https://github.com/grafana/grafana-kiosk)
+1. Use the instructions from [here](https://github.com/grafana/grafana-kiosk)
 2. Use wget to grab the tar file from releases section  
    1. Find URL of latest release gz  
    2. ```wget URL```  
    3. Extract the tar file with ```tar xvzf <path/to/tar.gz>```  
 2. Pick a way to do automatic startup
-   1. I used the Systemd startup option [https://github.com/grafana/grafana-kiosk#systemd-startup](https://github.com/grafana/grafana-kiosk#systemd-startup)
+   1. I used the [Systemd](https://github.com/grafana/grafana-kiosk#systemd-startup) startup option
    2. Use the first two commands to create the file and edit permissions
    3. Then add the next block of code to the file using a text editor
      1. Make sure to personalize the ```ExecStart=``` section based on what you want to see and which options you want to use
