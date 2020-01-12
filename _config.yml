@@ -117,7 +117,7 @@ author:
       icon: "fas fa-fw fa-envelope-square"
       # url: mailto:your.name@email.com
     - label: "Linked In"
-      icon: "fas fa-fw fa-link"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/scott--egan/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
