@@ -1,9 +1,9 @@
 ---
 title: "Netatmo Dashboard"
 categories:
-  - SmartHome
+  - Home Automation
 tags:
-  - SmartHome
+  - Home Automation
   - Netatmo
 toc: true
 ---
@@ -17,8 +17,7 @@ This is a tutorial for setting up a Raspberry Pi to fetch and store Netatmo weat
 </figure>
 
 
-## Using:
-
+Using:  
 - Raspberry Pi
 - Netatmo API
 - InfluxDB
@@ -76,21 +75,45 @@ You will need a ID and Key from Netatmo in order to use their API.
 
    - ```systemctl restart grafana-server```
 
-1. Set the home dashboard in Configuration\&gt;Preferences\&gt;Home Dashboard
+1. Set the dashboard you just created as the home dashboard in Configuration->Preferences->Home Dashboard
+<figure>
+    <a href="https://github.com/ScottEgan"><img src="/assets/images/setAsDefault.PNG"></a>
+</figure>
 
 ## 7. Set Grafana to start in kiosk mode at startup
 
 1. Use the instructions from [here](https://github.com/grafana/grafana-kiosk)
 2. Use wget to grab the tar file from releases section  
-   1. Find URL of latest release gz  
-   2. ```wget URL```  
-   3. Extract the tar file with ```tar xvzf <path/to/tar.gz>```  
+   - Find URL of latest release gz  
+   - ```wget URL```  
+   - Extract the tar file with ```tar xvzf <path/to/tar.gz>```  
 2. Pick a way to do automatic startup
-   1. I used the [Systemd](https://github.com/grafana/grafana-kiosk#systemd-startup) startup option
-   2. Use the first two commands to create the file and edit permissions
-   3. Then add the next block of code to the file using a text editor
-     1. Make sure to personalize the ```ExecStart=``` section based on what you want to see and which options you want to use
-   4. Follow the rest of the instructions in that section
+   - I used the [Systemd](https://github.com/grafana/grafana-kiosk#systemd-startup) startup option
+   - Use the first two commands to create the file and edit permissions:
+   ```BASH
+   $ sudo touch /etc/systemd/system/grafana-kiosk.service
+   $ sudo chmod 664 /etc/systemd/system/grafana-kiosk.service
+   ```
+   - Then add the next block of code to the file using a text editor:  
+   ```$ sudo nano grafana-kiosk.service``` and then paste:  
+   ```INI
+   [Unit]
+   Description=Grafana Kiosk
+   Documentation=https://github.com/grafana/grafana-kiosk
+   Documentation=https://grafana.com/blog/2019/05/02/grafana-tutorial-how-to-create-kiosks-to-display-dashboards-on-a-tv
+   After=network.target
+
+   [Service]
+   User=pi
+   Environment="DISPLAY=:0"
+   Environment="XAUTHORITY=/home/pi/.Xauthority"
+   ExecStart=/usr/bin/grafana-kiosk --URL <url>  -login-method local -username <username> -password <password> --kiosk-mode full --lxde
+
+   [Install]
+   WantedBy=graphical.targe
+   ```
+   - Make sure to personalize the ```ExecStart=``` section based on what you want to see and which options you want to use
+   - Follow the rest of the instructions in that section
 
 That should be everything
 
