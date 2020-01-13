@@ -74,7 +74,7 @@ You will need a ID and Key from Netatmo in order to use their API.
 
 1. Set the dashboard you just created as the home dashboard in Configuration->Preferences->Home Dashboard
 
-<img src="/assets/images/setAsDefault.PNG"></a>
+   <img src="/assets/images/setAsDefault.PNG" align="middle">
 
 ## 7. Set Grafana to start in kiosk mode at startup
 
