@@ -116,7 +116,7 @@ You will need a ID and Key from Netatmo in order to use their API.
 
 That should be everything
 
-References:  
+### References:  
 [Netatmo API docs](https://dev.netatmo.com/apidocumentation/weather)   
 [Pimylifeup tutorial on Influxdb](https://pimylifeup.com/raspberry-pi-influxdb/)  
 [Pimylifeup tutorial on Grafana](https://pimylifeup.com/raspberry-pi-grafana/)  
