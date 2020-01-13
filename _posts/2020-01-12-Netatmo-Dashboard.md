@@ -45,7 +45,7 @@ You will need a ID and Key from Netatmo in order to use their API.
 
 ## 3. Install InfluxDB
 
-1. Follow most of this tutorial [https://pimylifeup.com/raspberry-pi-influxdb/](https://pimylifeup.com/raspberry-pi-influxdb/)
+1. Follow most of this [this](https://pimylifeup.com/raspberry-pi-influxdb/) tutorial
 2. In the **Using InfluxDB on your Raspberry Pi** section only do steps 1 and 2
   1. Create a database using step 2 and name it whatever you want, just remember this name
 3. Go to the **Adding Authentication to InfluxDB** section and do all steps
@@ -90,8 +90,11 @@ You will need a ID and Key from Netatmo in order to use their API.
    $ sudo touch /etc/systemd/system/grafana-kiosk.service
    $ sudo chmod 664 /etc/systemd/system/grafana-kiosk.service
    ```
-   - Then add the next block of code to the file using a text editor:  
-   ```$ sudo nano grafana-kiosk.service``` and then paste:  
+   - Use the following to open the file in a text editor:  
+   ```
+   $ sudo nano grafana-kiosk.service
+   ```
+   and then paste:  
    ```INI
    [Unit]
    Description=Grafana Kiosk
@@ -114,5 +117,9 @@ You will need a ID and Key from Netatmo in order to use their API.
 That should be everything
 
 References:  
-[https://arnesund.com/2016/07/10/visualize-your-netatmo-data-with-grafana/](https://arnesund.com/2016/07/10/visualize-your-netatmo-data-with-grafana/)  
-[https://grafana.com/docs/grafana/latest/plugins/installation/](https://grafana.com/docs/grafana/latest/plugins/installation/)
+[Netatmo API docs](https://dev.netatmo.com/apidocumentation/weather)   
+[Pimylifeup tutorial on Influxdb](https://pimylifeup.com/raspberry-pi-influxdb/)  
+[Pimylifeup tutorial on Grafana](https://pimylifeup.com/raspberry-pi-grafana/)  
+[arnesund's original python file](https://arnesund.com/2016/07/10/visualize-your-netatmo-data-with-grafana/)  
+[Grafana docs for plugins](https://grafana.com/docs/grafana/latest/plugins/installation/)  
+[How to set up Grafana as a kioskk](https://github.com/grafana/grafana-kiosk)
