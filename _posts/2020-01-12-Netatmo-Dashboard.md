@@ -63,7 +63,13 @@ You will need a ID and Key from Netatmo in order to use their API.
 ## 5. Install Grafana
 
 1. Follow [this](https://pimylifeup.com/raspberry-pi-grafana/) tutorial by pimylifeup  
-2. When you get to step 2 of the **Installing Grafana to the Raspberry Pi** section go to the Grafana [downloads](https://grafana.com/grafana/download?platform=arm) page and use the latest version for the raspberry pi you are using.  
+2. When you get to step 2 of the **Installing Grafana to the Raspberry Pi** section, go to the Grafana [downloads](https://grafana.com/grafana/download?platform=arm) page and use the latest version for the raspberry pi you are using.
+   - For example when installing on an ARMv7 raspberry pi use the following:
+   ```BASH
+   sudo apt-get install -y adduser libfontconfig1
+   wget https://dl.grafana.com/oss/release/grafana_<latest_release>_armhf.deb
+   sudo dpkg -i grafana_<latest_release>_armhf.deb
+   ```
 3. Connect InfluxDB using default settings and your username and password from when you installed influx
 
 ## 6. Configure Grafana Dashboard
