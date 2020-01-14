@@ -51,7 +51,7 @@ You will need a ID and Key from Netatmo in order to use their API.
 3. Go to the **Adding Authentication to InfluxDB** section and do all steps
 4. Now you should have an influx database up and running that will start on reboot
 
-## 4. Write a script to handle the data
+## 4. Use a script to pull data from Netatmo and write it to the database
 
 1. See [fetchAndWriteData.py](https://github.com/ScottEgan/NetatmoDataGather). This file was was adapted from github user [arnesund](https://gist.github.com/arnesund/29ffa1cdabacabe323d3bc45bc7db3fb)
 2. I think netatmo stores data every 10min so set code to run every 8
@@ -129,4 +129,4 @@ That should be everything
 [Pimylifeup tutorial on Grafana](https://pimylifeup.com/raspberry-pi-grafana/)  
 [arnesund's original python file](https://arnesund.com/2016/07/10/visualize-your-netatmo-data-with-grafana/)  
 [Grafana docs for plugins](https://grafana.com/docs/grafana/latest/plugins/installation/)  
-[How to set up Grafana as a kioskk](https://github.com/grafana/grafana-kiosk)
+[How to set up Grafana as a kiosk](https://github.com/grafana/grafana-kiosk)
