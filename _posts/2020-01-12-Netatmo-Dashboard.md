@@ -102,7 +102,7 @@ You will need a ID and Key from Netatmo in order to use their API.
    $ sudo nano grafana-kiosk.service
    ```
    and then paste:  
-   ```INI
+   ```BASH
    [Unit]
    Description=Grafana Kiosk
    Documentation=https://github.com/grafana/grafana-kiosk
